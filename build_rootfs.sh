@@ -18,12 +18,11 @@ wget https://busybox.net/downloads/busybox-1.36.1.tar.bz2
 tar -xf busybox-1.36.1.tar.bz2 
 rm busybox-1.36.1.tar.bz2 
 cd busybox-1.36.1/ || exit
-# export PATH=/home/karol.przybylski/Documents/linux_from_scratch/crosstool_container/poky_clone/poky-container/DELETE/crosstool-ng/x-tools/aarch64-rpi4-linux-gnu/bin/:$PATH
+
 export PATH=$CROSSTOOL_DIR/x-tools/aarch64-rpi4-linux-gnu/bin/:$PATH
 export CROSS_COMPILE=aarch64-rpi4-linux-gnu-
 make CROSS_COMPILE="$CROSS_COMPILE" defconfig
 
-# sed -i 's%^CONFIG_PREFIX=.*$%CONFIG_PREFIX="/home/karol.przybylski/Documents/linux_from_scratch/rootfs"%' .config
 sed -i "s%^CONFIG_PREFIX=.*$%CONFIG_PREFIX=\"$ROOTFS_DIR\"%" .config   # sus, uwaga
 
 
