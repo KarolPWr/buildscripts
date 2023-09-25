@@ -26,7 +26,7 @@ make CROSS_COMPILE="$CROSS_COMPILE" defconfig
 sed -i "s%^CONFIG_PREFIX=.*$%CONFIG_PREFIX=\"$ROOTFS_DIR\"%" .config   # sus, uwaga
 
 
-CROSS_COMPILE="$BIN_DIR"/aarch64-rpi4-linux-gnu-
+CROSS_COMPILE=aarch64-rpi4-linux-gnu-
 
 make CROSS_COMPILE="$CROSS_COMPILE" install
 cd ..

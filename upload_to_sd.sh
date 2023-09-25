@@ -85,4 +85,8 @@ cp boot.scr $BOOT_MOUNT
 ### Dodajemy devicetree ###
 cp $KERNEL_DIR/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb $BOOT_MOUNT
 
+### Wgrywanie rootfs ###
+sudo cp -r $ROOTFS_DIR/* $ROOT_MOUNT
+
+
 sync
