@@ -6,4 +6,4 @@ set -x
 . setup.sh
 
 
-rm -rf "$UBOOT_DIR" "$ROOTFS_DIR" "$KERNEL_DIR" "$CROSSTOOL_DIR"
+rm -rf "$UBOOT_DIR" "$ROOTFS_DIR" "$KERNEL_DIR" "$CROSSTOOL_DIR" boot/
