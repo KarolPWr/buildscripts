@@ -4,7 +4,9 @@ set -x
 
 . setup.sh
 
-git clone --depth=1 -b rpi-5.19.y https://github.com/raspberrypi/linux.git
+# git clone --depth=1 -b rpi-5.19.y https://github.com/raspberrypi/linux.git
+git clone --depth=1 -b rpi-6.1.y https://github.com/raspberrypi/linux.git
+
 
 cd linux || exit
 
