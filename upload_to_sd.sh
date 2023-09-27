@@ -12,34 +12,7 @@ DEVICE=$1
 
 sudo umount $DEVICE?*
 
-(
-echo p # print information
-echo d # delete first partition
-echo   # accept default
-echo d # delete second partition
-echo   # accept default
-echo p # print information
-echo w # write
-) | sudo fdisk $DEVICE
-
-(
-echo n # new partition
-echo p # primary partition
-echo 1 # choose first partition
-echo   # accept default start sector
-echo +100M # define size (end sector)
-echo p # print info
-echo t # change type of partition
-echo b # choose DOS partition
-echo p # print info
-echo n # new partition
-echo p # primary partition
-echo 2 # second partition
-echo   # accept default start sector
-echo   # define size (end sector, all available memory)
-echo p # print info
-echo w # write
-) | sudo fdisk $DEVICE
+sudo sfdisk "$DEVICE" < sdb.sfdisk
 
 # Formatujemy partycje
 mkfs.vfat -F 32 -n boot $DEVICE"1"
