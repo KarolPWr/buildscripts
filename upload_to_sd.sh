@@ -46,7 +46,7 @@ cp config.txt /mnt/boot
 # Piszemy bootscript dla u-boota (co ma zrobić po wstaniu)
 cat << EOF > boot_cmd.txt
 fatload mmc 0:1 \${kernel_addr_r} Image
-setenv bootargs "console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rw rootwait init=/bin/sh"
+setenv bootargs "8250.nr_uarts=1 console=ttyS0,115200 root=/dev/mmcblk0p2 rw rootwait earlyprintk init=/bin/sh"
 booti \${kernel_addr_r} - \${fdt_addr}
 EOF
 
